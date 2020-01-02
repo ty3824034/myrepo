@@ -113,9 +113,13 @@ public ModelAndView submitPage(HttpServletRequest req ,@RequestPart("pic") Multi
 		DateFormat df= new SimpleDateFormat("dd/MM/yy HH:mm:ss");
 		   Date dateobj= new Date();
 			String L=df.format(dateobj);
-	file1.transferTo(new File("C:\\Users\\intel\\Documents\\workspace-sts-3.9.10.RELEASE\\BloodDonationSystem\\src\\main\\resources\\static\\photos\\"+L));
-	file2.transferTo(new File("C:\\Users\\intel\\Documents\\workspace-sts-3.9.10.RELEASE\\BloodDonationSystem\\src\\main\\resources\\static\\idproof\\"+L));
-	file3.transferTo(new File("C:\\Users\\intel\\Documents\\workspace-sts-3.9.10.RELEASE\\BloodDonationSystem\\src\\main\\resources\\static\\bcertificate\\"+L));
+			
+	file1.transferTo(new File("C:\\Users\\intel\\Desktop\\myrepo\\BloodDonationSystem\\src\\main\\resources\\static\\photos\\"+L));
+	file2.transferTo(new File("C:\\Users\\intel\\Desktop\\myrepo\\BloodDonationSystem\\src\\main\\resources\\static\\idproof\\"+L));
+	file3.transferTo(new File("C:\\Users\\intel\\Desktop\\myrepo\\BloodDonationSystem\\src\\main\\resources\\static\\bcertificate\\"+L));
+	user.setPicture(L);
+	user.setIdproof(L);
+	user.setBloodcertificate(L);
 	}catch(Exception e) {}
 	
     usersrepository.save(user);
